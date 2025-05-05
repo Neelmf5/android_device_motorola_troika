@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+PRODUCT_SHIPPING_API_LEVEL := 29
+
 # Inherit from the common tree
 $(call inherit-product, device/motorola/exynos9610-common/common.mk)
 
