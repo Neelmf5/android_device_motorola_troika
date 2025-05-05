@@ -16,21 +16,30 @@
 
 ## Inherit from generic products, most specific first
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+##$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 ## Inherit from troika device
 $(call inherit-product, device/motorola/troika/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 ## Inherit some common Lineage stuff
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/pb/config/common_full_phone.mk)
 
 ## Device identifier, this must come after all inclusions
 PRODUCT_DEVICE := troika
-PRODUCT_NAME := lineage_troika
+PRODUCT_NAME := aosp_troika
 PRODUCT_BRAND := motorola
 PRODUCT_MODEL := motorola one action
 PRODUCT_MANUFACTURER := motorola
+
+# Boot animation
+TARGET_BOOT_ANIMATION_RES := 1080
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.adb.secure=0 \
+    persist.service.adb.enable=1 \
+    persist.sys.usb.config=mtp,adb \
+    service.adb.root=1
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
