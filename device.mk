@@ -21,7 +21,7 @@ $(call inherit-product, device/motorola/exynos9610-common/common.mk)
 $(call inherit-product, vendor/motorola/troika/troika-vendor.mk)
 
 # Inherit GApps
-#$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
+$(call inherit-product, vendor/gapps/arm64/arm64-vendor.mk)
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
